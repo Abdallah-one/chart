@@ -39,6 +39,7 @@
         const dates = [];
         const inflows = [];
         const outflows = [];
+        const abdullah = [];
         
         // Loop through each row of the CSV
         results.data.forEach(function(row) {
@@ -47,6 +48,7 @@
             dates.push(row.Date);
             inflows.push(row.Inflow);
             outflows.push(row.Outflow);
+            abdullah.push(row.Abdullah);
           }
         });
         
@@ -72,6 +74,14 @@
                 borderColor: 'rgba(0, 51, 160, 1)',
                 backgroundColor: 'rgba(217, 224, 241, 0.2)',
                 tension: 0.1
+              },
+              {
+                  label: 'Abdullah',
+                  data: abdullah,
+                  fill: false,
+                  borderColor: 'rgba(0, 51, 160, 1)',
+                  backgroundColor: 'rgba(217, 224, 241, 0.2)',
+                  tension: 0.1
               }
             ]
           },
