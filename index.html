@@ -37,6 +37,13 @@
     </div>
 
     <script>
+        function filterAndUpdateChart() {
+            const selectedCountry = document.getElementById("countryFilter").value;
+            alert(selectedCountry);
+        }
+
+        document.getElementById("countryFilter").addEventListener("change", filterAndUpdateChart);
+
         // Use Papa Parse to load the CSV file
         Papa.parse("data.csv", {
             download: true,
@@ -49,6 +56,9 @@
                 const inflows = [];
                 const outflows = [];
                 const abdullah = [];
+
+                // Attach event listener to the filter dropdown so that the chart updates on selection
+
 
                 // Loop through each row of the CSV
                 results.data.forEach(function (row) {
