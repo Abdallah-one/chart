@@ -56,9 +56,9 @@
                     if (row.Date && row.Inflow !== undefined && row.Outflow !== undefined) {
                         dates.push(row.Date);
                         const selectedCountry = document.getElementById("countryFilter").value;
-                        if (selectedCountry = "In") inflows.push(row.Inflow);
-                        if (selectedCountry = "Out") outflows.push(row.Outflow);
-                        if (selectedCountry = "Abdullah") abdullah.push(row.Abdullah);
+                        if (selectedCountry == "In") { inflows.push(row.Inflow); }
+                        if (selectedCountry == "Out") { outflows.push(row.Outflow); }
+                        if (selectedCountry == "Abdullah") { abdullah.push(row.Abdullah); }
                     }
                 });
 
