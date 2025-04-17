@@ -181,20 +181,21 @@
                         responsive: true,
                         scales: {
                             x: {
-                                type: 'time',
                                 title: {
                                     display: false,
-                                    text: 'Date'
-                                },
-                                time: {
-                                    parser: 'MM/DD/YYYY HH:mm',
-                                    tooltipFormat: 'll HH:mm',
-                                    unit: 'day',
-                                    unitStepSize: 1,
-                                    displayFormats: {
-                                        'day': 'MM/DD/YYYY'
-                                       }
-                               },
+                                    text: 'Date',
+                                    type: 'time',
+                                    time: {
+                                        parser: 'MM/DD/YYYY HH:mm',
+                                        tooltipFormat: 'll HH:mm',
+                                        unit: 'day',
+                                        unitStepSize: 1,
+                                        displayFormats: {
+                                            'day': 'MM/DD/YYYY'
+                                        }
+                                    }
+                                }
+                            },
                             y: {
                                 title: {
                                     display: false,
