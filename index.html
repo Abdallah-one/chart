@@ -26,6 +26,7 @@
     <div id="chart-container">
         <canvas id="lineChart1"></canvas>
         <canvas id="lineChart2"></canvas>
+        <canvas id="lineChart3"></canvas>
     </div>
   
   <script>
@@ -145,6 +146,47 @@
                   }
               }
           });
+
+
+
+
+          const ctx3 = document.getElementById('lineChart3').getContext('2d');
+          new Chart(ctx3, {
+              type: 'line',
+              data: {
+                  labels: dates,
+                  datasets: [
+                      {
+                          label: 'Inflow',
+                          data: inflows,
+                          fill: false,
+                          borderColor: 'rgba(92, 184, 178, 1)',
+                          backgroundColor: 'rgba(231, 244, 243, 0.2)',
+                          tension: 0.1
+                      }
+                  ]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      x: {
+                          title: {
+                              display: false,
+                              text: 'Date'
+                          }
+                      },
+                      y: {
+                          title: {
+                              display: false,
+                              text: 'Amount'
+                          }
+                      }
+                  }
+              }
+          });
+
+
+
       },
       error: function(error) {
         console.error("Error parsing CSV:", error);
