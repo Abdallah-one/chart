@@ -181,6 +181,11 @@
                         responsive: true,
                         scales: {
                             x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day',
+                                    parser: 'dd.MM.yyyy'
+                                },
                                 title: {
                                     display: false,
                                     text: 'Date'
