@@ -8,18 +8,59 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Load Papa Parse from CDN to parse CSV files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
   <style>
-    body {
-      font-family: "Gill Sans Nova", "Gill Sans", sans-serif;
-      padding: 20px;
-      background-color: #f5f5f5;
-      text-align: center;
-    }
-    #chart-container {
-      width: 80%;
-      max-width: 2000px;
-      margin: 0 auto;
-    }
+      body {
+          font-family: "Gill Sans Nova", "Gill Sans", sans-serif;
+          padding: 20px;
+          background-color: #f5f5f5;
+          text-align: center;
+      }
+
+      #chart-container {
+          width: 80%;
+          max-width: 2000px;
+          margin: 0 auto;
+      }
+
+
+
+      /* Style the tab */
+      .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+      }
+
+          /* Style the buttons inside the tab */
+          .tab button {
+              background-color: inherit;
+              float: left;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              padding: 14px 16px;
+              transition: 0.3s;
+              font-size: 17px;
+          }
+
+              /* Change background color of buttons on hover */
+              .tab button:hover {
+                  background-color: #ddd;
+              }
+
+              /* Create an active/current tablink class */
+              .tab button.active {
+                  background-color: #ccc;
+              }
+
+      /* Style the tab content */
+      .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+      }
   </style>
 </head>
 <body>
