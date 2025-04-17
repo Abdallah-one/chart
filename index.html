@@ -128,13 +128,24 @@
                 const inflows = [];
                 const outflows = [];
 
+                const inflowsiran = [];
+                const outflowsiran = [];
+                const inflowspak = [];
+                const outflowspak = [];
+
                 // Loop through each row of the CSV
                 results.data.forEach(function (row) {
                     // Check if required fields exist before adding them to the arrays
-                    if (row.Date && row.Inflow !== undefined && row.Outflow !== undefined) {
+                    if (row.Date && row.TOTAL_INFLOW !== undefined && row.TOTAL_OUTFLOW !== undefined && row.INFLOW_IRAN !== undefined && row.OUTFLOW_IRAN !== undefined && row.INFLOW_PAK !== undefined && row.OUTFLOW_PAK !== undefined) {
                         dates.push(row.Date);
-                        inflows.push(row.Inflow);
-                        outflows.push(row.Outflow);
+                        inflows.push(row.TOTAL_INFLOW);
+                        outflows.push(row.TOTAL_OUTFLOW);
+
+                        inflowsiran.push(row.INFLOW_IRAN);
+                        outflowsiran.push(row.OUTFLOW_IRAN);
+
+                        inflowspak.push(row.INFLOW_PAK);
+                        outflowspak.push(row.OUTFLOW_PAK);
                     }
                 });
 
@@ -147,7 +158,7 @@
                         datasets: [
                             {
                                 label: 'Inflow',
-                                data: inflows,
+                                data: TOTAL_INFLOW,
                                 fill: false,
                                 borderColor: 'rgba(92, 184, 178, 1)',
                                 backgroundColor: 'rgba(231, 244, 243, 0.2)',
@@ -155,7 +166,7 @@
                             },
                             {
                                 label: 'Outflow',
-                                data: outflows,
+                                data: TOTAL_OUTFLOW,
                                 fill: false,
                                 borderColor: 'rgba(0, 51, 160, 1)',
                                 backgroundColor: 'rgba(217, 224, 241, 0.2)',
@@ -198,7 +209,7 @@
                         datasets: [
                             {
                                 label: 'Inflow',
-                                data: inflows,
+                                data: INFLOW_IRAN,
                                 fill: false,
                                 borderColor: 'rgba(92, 184, 178, 1)',
                                 backgroundColor: 'rgba(231, 244, 243, 0.2)',
@@ -206,7 +217,7 @@
                             },
                             {
                                 label: 'Outflow',
-                                data: outflows,
+                                data: OUTFLOW_IRAN,
                                 fill: false,
                                 borderColor: 'rgba(0, 51, 160, 1)',
                                 backgroundColor: 'rgba(217, 224, 241, 0.2)',
@@ -244,10 +255,18 @@
                         datasets: [
                             {
                                 label: 'Inflow',
-                                data: inflows,
+                                data: INFLOW_PAK,
                                 fill: false,
                                 borderColor: 'rgba(92, 184, 178, 1)',
                                 backgroundColor: 'rgba(231, 244, 243, 0.2)',
+                                tension: 0.1
+                            },
+                            {
+                                label: 'Outflow',
+                                data: OUTFLOW_PAK,
+                                fill: false,
+                                borderColor: 'rgba(0, 51, 160, 1)',
+                                backgroundColor: 'rgba(217, 224, 241, 0.2)',
                                 tension: 0.1
                             }
                         ]
