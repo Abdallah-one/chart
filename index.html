@@ -23,9 +23,10 @@
   </style>
 </head>
 <body>
-  <div id="chart-container">
-    <canvas id="lineChart"></canvas>
-  </div>
+    <div id="chart-container">
+        <canvas id="lineChart1"></canvas>
+        <canvas id="lineChart2"></canvas>
+    </div>
   
   <script>
     // Use Papa Parse to load the CSV file
@@ -51,7 +52,7 @@
         });
         
         // Create the line chart using Chart.js
-        const ctx = document.getElementById('lineChart').getContext('2d');
+        const ctx = document.getElementById('lineChart1').getContext('2d');
         new Chart(ctx, {
           type: 'line',
           data: {
